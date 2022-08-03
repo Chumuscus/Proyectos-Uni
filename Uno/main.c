@@ -94,10 +94,6 @@ int main()
         imagenesCartas[i/13][i%13] = al_load_bitmap(img);
     }
 
-
-    /*ALLEGRO_MOUSE_CURSOR* asdf = al_create_mouse_cursor(imagenesCartas[0][0], 0, 0); //Cambia la imagen del cursor
-    al_set_mouse_cursor(disp, asdf);*/
-
     while(1){
 
         finTurno=false;
@@ -390,8 +386,9 @@ int repartir_cartas(C cartas[108],J jugadores[4],int numeroJugadores){
 
 void conseguir_posicion_cartas(J *jugador){
     int i,x;
+
+    x=(1000-jugador->numeroCartas*164)/(jugador->numeroCartas+1);
     for(i=0;i<jugador->numeroCartas;i++){
-        x=(1000-jugador->numeroCartas*164)/(jugador->numeroCartas+1);
         jugador->cartas[i].x=140+(x+i*(x+164));
         jugador->cartas[i].y=481;
     }

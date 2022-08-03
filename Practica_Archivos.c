@@ -30,7 +30,7 @@ struct fecha_nacimiento{
 struct persona{
     N nombre;
     D direccion;
-    char correo[1000];
+    char correo[100];
     int cuantos,borrado;
     T telefono[4];
     F fecha;
@@ -466,23 +466,3 @@ P borrar(int pos,FILE *F){
 
     return agenda;
 }
-
-/*
-int i;
-    P agenda,vacia={NULL};
-
-    F=fopen("agenda.bin","rb");
-    fread(&agenda,sizeof(P),1,F);
-
-    while(!feof(F)){
-        if(agenda.borrado==1){
-            if(strcmp(rfc,agenda.rfc)==0){
-                fclose(F);
-                return agenda;
-            }
-        }
-        fread(&agenda,sizeof(P),1,F);
-    }
-    fclose(F);
-    return vacia;
-*/
